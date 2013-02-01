@@ -40,4 +40,23 @@ class Controller extends RController
         $this->render('//system/_json', array('data'=>$data));
         if($exit) Y::end();
     }
+
+    /**
+     * @param $name
+     * @param array $except
+     * @return mixed
+     */
+    public function encodePost( $name, $except = array() )
+    {
+        $_post = $_POST[$name];
+
+        foreach ($_post as $key => &$value)
+        {
+            if ( !empty($except) && in_array($key, $except) ) continue;
+
+            $value = CHtml::encode($value);
+        }
+
+        return $_post;
+    }
 }
