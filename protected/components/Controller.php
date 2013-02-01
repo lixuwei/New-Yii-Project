@@ -42,9 +42,10 @@ class Controller extends RController
     }
 
     /**
+     * encode post value
      * @param $name
-     * @param array $except
-     * @return mixed
+     * @param array $except 不需要encode的数据键值
+     * @return mixed 返回encode 过后的数组
      */
     public function encodePost( $name, $except = array() )
     {
