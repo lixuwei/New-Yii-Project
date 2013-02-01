@@ -16,6 +16,9 @@ return array(
 	// preloading 'log' component
 	'preload'=>array('log'),
 
+    // request 回调
+    'onBeginRequest' => array( 'Request', 'onBeginRequest'),
+    'onEndRequest'   => array( 'Request', 'onEndRequest'),
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -27,7 +30,7 @@ return array(
         'application.modules.rights.components.*',
 
         /* for ext yii-debug */
-        'application.extensions.debug.*',
+        'application.extensions.YiiDebug.*',
 	),
 
 	'modules'=>array(

@@ -20,4 +20,24 @@ class Controller extends RController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+
+    /**
+     * 调用JSON
+     * @param bool $status
+     * @param string $msg
+     * @param string $info
+     * @param bool $exit
+     */
+    public function renderJSON($status=true, $msg='', $info='', $exit = true)
+    {
+        $data = array(
+            'status' => $status,
+            'msg'    => $msg,
+            'info'   => $info
+        );
+
+        $data = CJSON::encode($data);
+        $this->render('//system/_json', array('data'=>$data));
+        if($exit) Y::end();
+    }
 }
