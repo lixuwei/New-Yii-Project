@@ -74,12 +74,16 @@ return array(
 
         'urlManager' => include( dirname(__FILE__).'/url.conf.php' ),
 
+        'widgetFactory'=>array(
+                        'widgets'=> include( dirname(__FILE__).'/widgets.conf.php' ),
+                    ),
+
         'db' => include( dirname(__FILE__).'/db.conf.php' ),
 
 		'log' => array(
-                'class'=>'CLogRouter',
-                'routes'=>include( dirname(__FILE__).'/log.conf.php'),
-            ),
+                    'class'=>'CLogRouter',
+                    'routes'=>include( dirname(__FILE__).'/log.conf.php'),
+                ),
     ),
 
 	'params'=>include( dirname(__FILE__).'/params.conf.php' ),
