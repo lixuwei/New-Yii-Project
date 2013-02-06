@@ -16,9 +16,15 @@ return array(
 	// preloading 'log' component
 	'preload'=>array('log'),
 
-    // request 回调
-    'onBeginRequest' => array( 'Request', 'onBeginRequest'),
-    'onEndRequest'   => array( 'Request', 'onEndRequest'),
+    'behaviors' => array(
+        // request 回调
+        'onBeginRequest' => array(
+            'class' => 'application.components.BeginRequestBehavior',
+        ),
+        'onEndRequest'   => array(
+            'class' => 'application.components.EndRequestBehavior'
+        ),
+    ),
 
 	// autoloading model and component classes
 	'import'=>array(
