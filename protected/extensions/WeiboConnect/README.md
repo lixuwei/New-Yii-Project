@@ -8,6 +8,7 @@
 ## 安装步骤
 * 必须放置于extensions目录下
 * 在 `config/main.php` 中修改以下代码
+
 ```php
 	'import'=>array(
 		...
