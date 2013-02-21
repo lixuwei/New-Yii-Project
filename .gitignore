@@ -165,5 +165,4 @@ pip-log.txt
 # Yii-project
 .idea/
 framework/
-assets/
 protected/runtime/
