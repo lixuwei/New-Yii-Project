@@ -3,6 +3,16 @@
 class EmailModule extends CWebModule
 {
     public $defaultController = 'Mail';
+    /* 定义服务器参数 */
+    public $from = 'rogeecn@qq.com';
+    public $sender = '益捐';
+    public $protocol = 2;
+    public $host = 'smtp.qq.com';
+    public $port = 25;
+    public $user = '';
+    public $pass = '';
+
+
 	public function init()
 	{
 		// this method is called when the module is being created
@@ -19,8 +29,6 @@ class EmailModule extends CWebModule
 	{
 		if(parent::beforeControllerAction($controller, $action))
 		{
-			// this method is called before any module controller action is performed
-			// you may place customized code here
 			return true;
 		}
 		else
